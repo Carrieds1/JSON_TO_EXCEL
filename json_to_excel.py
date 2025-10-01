@@ -131,10 +131,8 @@ def extract_json_data(input_path, output_path, start_pattern=None, end_pattern=N
             worksheet = excel_writer.sheets[DEFAULT_SHEET_NAME]
             
             for col_index, column_name in enumerate(df.columns):
-                column_width = max(
-                                   df[column_name].astype(str).map(len).max(),
-                                   len(str(column_name)))
-                column_width += COLUMN_PADDING
+                column_width = max(df[column_name].astype(str).map(len).max(),
+                                   len(str(column_name))) += COLUMN_PADDING
                 
                 worksheet.set_column(col_index, col_index, column_width)
 

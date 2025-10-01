@@ -47,6 +47,13 @@ USAGE
                     start_pattern='{"created_at":', 
                     end_pattern='}')
 
+4. Customization options:
+   - Edit the script constants to change how JSON is processed
+   - For complete JSON files: leave start_pattern and end_pattern as None
+   - For specific JSON objects: define patterns that match your data structure
+   - Modify DICT_SEPARATOR and array formatting to suit your preferences
+   - Adjust column formatting for better readability
+
 CONFIGURATION
 ------------
 The script contains several customizable constants:

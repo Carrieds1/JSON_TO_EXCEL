@@ -18,6 +18,11 @@ FEATURES
 * Extracts individual JSON objects from larger text files using pattern matching
 * Handles deeply nested structures with full support for complex data
 
+COMING SOON/TODO LIST (HOPEFULLY)
+--------
+* Easily change definitions from "start_string" to "end_string" to pull certain data
+* URL/HTML request portability
+
 REQUIREMENTS
 -----------
 * Python 3.6 or higher
@@ -107,4 +112,8 @@ Carried
 
 VERSION
 -------
-1.0 (January 10, 2025)
+1.1 (January 11, 2025) - Updated style and readability
+
+VERSION HISTORY
+-------
+1.0 (January 10, 2025) - Made for a CTF challenge but saw its reusability so wanted to work on it :)

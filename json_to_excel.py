@@ -1,28 +1,3 @@
-"""
-JSON to Excel Extractor
-
-Extracts JSON data from files or text dumps and formats it into well-structured Excel spreadsheets.
-Handles deeply nested JSON objects with hierarchical column names for easy data analysis.
-
-Features:
-- Flattens complex nested JSON structures
-- Auto-sizes Excel columns for readability
-- Customizable JSON extraction patterns
-- Full support for arrays and nested dictionaries
-
-Usage:
-    python extract_monster.py
-
-Dependencies:
-    pandas, xlsxwriter
-
-Author: [Carried]
-Version: 1.0
-Date: [1/10/25]
-
-TODO: Add support for HTTP responses and direct URL input
-"""
-
 import json
 import os
 import pandas as pd
@@ -32,35 +7,26 @@ EXCEL_WRITER = 'xlsxwriter'
 READ = 'r'
 
 # Below are edittable definitions for portability with other JSON stringdumps
-# File handling constants
 DEFAULT_INPUT_PATH = "PATHNAME/FILENAME"
 DEFAULT_OUTPUT_PATH = "PATHNAME/FILENAME"
-
-# Encoding constants
-INPUT_ENCODING = 'utf-8'   # Encoding for reading input files
-OUTPUT_ENCODING = 'utf-8'  # Encoding for writing output files - removed usage for excel output
-
-# JSON parsing constants - change patterns to identify start and end of each JSON
-JSON_START_PATTERN = '{"created_at": "'  # Start marker for each JSON object
-JSON_END_PATTERN = '"lang": "und"}'      # End marker for each JSON object
-
-# Key formatting constants
-DICT_SEPARATOR = '.'     # Symbol used between parent/child keys (e.g., user.name)
-ARRAY_PREFIX = '['       # Opening bracket for array indices
-ARRAY_SUFFIX = ']'       # Closing bracket for array indices
-EMPTY_ARRAY = "[]"       # Representation for empty arrays
+INPUT_ENCODING = 'utf-8'   
+JSON_START_PATTERN = '{"EXAMPLE": "'  
+JSON_END_PATTERN = '"EXAMPLE"}'     
+DICT_SEPARATOR = '.'     
+ARRAY_PREFIX = '['       
+ARRAY_SUFFIX = ']'       
+EMPTY_ARRAY = "[]"       
 
 # Excel formatting constants
-COLUMN_PADDING = 2       # Extra space added to column width
+COLUMN_PADDING = 2       # Extra space added to column width (default = largest string + 2)
 DEFAULT_SHEET_NAME = 'Data'
-DEFAULT_VALUE = ""       # Value to use for missing data
+DEFAULT_VALUE = ""   
 
-# Error messages
 ERROR_INVALID_JSON = "Error: File is neither valid JSON nor contains extractable JSON objects"
 ERROR_NO_DATA = "No data found to export"
 SUCCESS_MESSAGE = "Data saved to {0} with auto-sized columns"
 ERROR_JSON_PARSE = "Error parsing JSON at position {0}-{1}: {2}"
-SNIPPET_LENGTH = 50  # Length of ERROR JSON PARSE preview to show in error messages
+SNIPPET_LENGTH = 50      # For above error
 
 def flatten_json(nested_data, parent_key=DEFAULT_VALUE):
     flattened_dict = {}

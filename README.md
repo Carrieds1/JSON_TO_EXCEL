@@ -82,6 +82,25 @@ user.name | user.addresses[0].city | user.addresses[0].type | user.addresses[1].
 ---------|------------------------|------------------------|------------------------|-----------------------
 John     | New York               | home                   | Boston                 | work
 
+DATA FORMATTING
+--------------
+All data is exported in UTF-8 string format by default. To convert string values
+to numbers for analysis in Excel:
+
+1. Select the column(s) you wish to convert
+2. Navigate to the "Data" tab in the Excel ribbon
+3. Click "Text to Columns"
+4. Select "Delimited" and click "Next"
+5. Uncheck all delimiter options and click "Next"
+6. Under "Column data format", select "General" (for automatic type detection)
+7. Click "Finish"
+
+This process tells Excel to reinterpret the text values as numbers where
+appropriate, allowing you to perform calculations and numerical analysis.
+
+For date fields, you may need to use Excel's date conversion functions
+after completing the steps above.
+
 AUTHOR
 ------
 Carried

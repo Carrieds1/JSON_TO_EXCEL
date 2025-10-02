@@ -68,6 +68,15 @@ The script contains several customizable constants:
 * DICT_SEPARATOR: Character used between parent/child keys (default: '.')
 * INPUT_ENCODING: Character encoding for input files (default: 'utf-8')
 * COLUMN_PADDING: Extra space added to Excel column width (default: 2)
+* TRUNCATION_SEPERATOR: Indicator for truncated content (default: "...")
+* SNIPPET_LENGTH: Maximum length for error snippets (default: 50)
+
+ERROR HANDLING
+-------------
+The tool provides detailed error messages when:
+* JSON parsing fails with specific position information
+* No data is available for export
+* Input is neither valid JSON nor contains extractable objects
 
 EXAMPLE OUTPUT
 -------------
